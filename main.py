@@ -2,6 +2,7 @@ import argparse
 import os
 import sys
 from core.sorter import FileSorter
+from core.logger import setup_logger
 
 def main():
     # Creating Parser
@@ -22,6 +23,7 @@ def main():
 
     # Parse the arguments
     args = parser.parse_args()
+    logger = setup_logger()
 
     # validate Path
     if not os.path.exists(args.path):
@@ -32,7 +34,7 @@ def main():
     print(f"Target path: {args.path}")
     if args.sort:
         print(f"[INFO] Sorting files by type...")
-        FileSorter.sort_by_type(args.path)
+        FileSorter.sort_by_type(args.path, logger)
 
 
 if __name__ == '__main__':
