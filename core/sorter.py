@@ -9,7 +9,7 @@ class FileSorter:
         'Images': ['.jpg', '.jpeg', '.png', '.gif', '.bmp'],
         'Documents': ['.pdf', '.docx', '.doc', '.txt', '.xlsx', '.pptx'],
         'Videos': ['.mp4', '.mkv', '.avi', '.mov'],
-        'Music': ['.mp3', '.wav', '.flac'],
+        'Music': ['.mp3', '.wav', '.fla'],
         'Archives': ['.zip', '.rar', '.7z'],
         'Scripts': ['.py', '.js', '.java', '.cpp', '.c', '.html', '.css', '.json'],
         'Others': []
@@ -19,7 +19,7 @@ class FileSorter:
     def sort_by_type(folder_path, logger):
         if not os.path.isdir(folder_path):
             print(f"ERROR Path does not exists: {folder_path}")
-            logger.error(f"Invalied Path: {folder_path}")
+            logger.error(f"Invalided Path: {folder_path}")
             return
 
         for file in os.listdir(folder_path):
